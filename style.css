@@ -5,7 +5,6 @@
   --red: #ff3c3c;
   --dblue: #101724;
   --lblue: #4a68a1;
-  --white: #ffffff;
 
   --second: 1s;
   --minute: calc(var(--second) * 60);
@@ -14,6 +13,8 @@
   --delayH: 0s;
   --delayM: 0s;
   --delayS: 0s;
+
+  --radius: 300;
 }
 
 body, html { height: 100%; width: 100%; }
@@ -213,6 +214,8 @@ i {
 .tagcloud {
   color: white;
   margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .tagcloud--item {
@@ -250,10 +253,14 @@ i {
   #localClock { width: 45%; }
   
   body { font-size: 2em; }
+
+  :root { --radius: 200; }
 }
 
 @media (max-width: 600px) {
   #localClock { width: 60%; }
+
+  :root { --radius: 120; }
 }
 
 @media (max-width: 400px) {
