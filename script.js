@@ -69,7 +69,7 @@ const texts = [
 ]
 
 var tagCloud = TagCloud('.tagcloud', texts,{
-  radius: 300,
+  radius: getComputedStyle(document.querySelector(':root')).getPropertyValue('--radius'),
   maxSpeed: 'fast',
   initSpeed: 'fast',
   keep: true,
