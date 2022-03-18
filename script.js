@@ -17,7 +17,7 @@ async function getTime(id, location) {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-  }) 
+  }).replace(/, /g, '<i>|</i>')
 }
 
 function updateLocations() {
@@ -59,4 +59,24 @@ setInterval(function() {
   document.getElementById('localTime').innerHTML = h+':'+m+':'+s
 
   updateLocations()
-}, 1)
+}, 10)
+
+const texts = [
+  'Python', 'JS', 'Java',
+  'C++', 'C#', 'C', 'Lisp', 'COBOL',
+  'Ruby', 'Lua', 'HTML', 'CSS',
+  'Kotlin', 'Swift', 'GO', 'PHP'
+]
+
+var tagCloud = TagCloud('.tagcloud', texts,{
+  radius: 300,
+  maxSpeed: 'fast',
+  initSpeed: 'fast',
+  keep: true,
+})
+
+document.querySelector('.tagcloud').addEventListener('click', function clickEventHandler(e) {
+  if (e.target.className === 'tagcloud--item') {
+    window.alert('You picked: ' + e.target.innerText)
+  }
+})
