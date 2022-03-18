@@ -44,7 +44,7 @@ document.getElementById('details').innerHTML = today.toLocaleTimeString('en-us',
 
 updateLocations()
 
-var delayH = -3600*(h+6)
+var delayH = -3600*(h+6)-60*m
 var delayM = -60*(30+m)
 var delayS = -30.25-s
 document.documentElement.style.setProperty('--delayH', delayH + 's')
